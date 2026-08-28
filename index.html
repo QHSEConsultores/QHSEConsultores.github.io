@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -300,7 +299,7 @@
                 ),
 
                 url("hero.jpg")
-                center 75% /cover no-repeat;
+                center 75% / cover no-repeat;
 
         }
 
@@ -695,26 +694,30 @@
             padding: 28px;
 
         }
+
+
         .training-image {
 
-    height: 180px;
+            height: 180px;
 
-    margin: -28px -28px 25px -28px;
+            margin: -28px -28px 25px -28px;
 
-    overflow: hidden;
+            overflow: hidden;
 
-}
+        }
 
-.training-image img {
 
-    width: 100%;
+        .training-image img {
 
-    height: 100%;
+            width: 100%;
 
-    object-fit: cover;
-    object-position: center 35%;
+            height: 100%;
 
-}
+            object-fit: cover;
+
+            object-position: center 35%;
+
+        }
 
 
         .training-card h3 {
@@ -748,6 +751,279 @@
             font-weight: bold;
 
             opacity: 0.12;
+
+        }
+
+
+        /* =====================================================
+           GALERÍA - TRABAJOS EN ALTURA
+        ====================================================== */
+
+        .gallery-trigger {
+
+            cursor: pointer;
+
+        }
+
+
+        .gallery-trigger:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 30px rgba(13,43,54,0.18);
+
+        }
+
+
+        .gallery-modal {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 5000;
+
+            background: rgba(0,0,0,0.94);
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+
+        }
+
+
+        .gallery-modal.active {
+
+            display: flex;
+
+        }
+
+
+        .gallery-content {
+
+            position: relative;
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .gallery-image {
+
+            display: block;
+
+            width: auto;
+
+            max-width: 100%;
+
+            height: auto;
+
+            max-height: 72vh;
+
+            object-fit: contain;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,0.5);
+
+        }
+
+
+        /* BOTÓN CERRAR */
+
+        .gallery-close {
+
+            position: absolute;
+
+            top: -50px;
+
+            right: 0;
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .gallery-close:hover {
+
+            transform: scale(1.15);
+
+            color: #66bb6a;
+
+        }
+
+
+        /* FLECHAS */
+
+        .gallery-arrow {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 55px;
+
+            height: 75px;
+
+            border: none;
+
+            border-radius: 5px;
+
+            background: rgba(255,255,255,0.15);
+
+            color: white;
+
+            font-size: 38px;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: 0.3s;
+
+            z-index: 10;
+
+        }
+
+
+        .gallery-arrow:hover {
+
+            background: rgba(255,255,255,0.30);
+
+            transform:
+                translateY(-50%)
+                scale(1.05);
+
+        }
+
+
+        .gallery-prev {
+
+            left: -80px;
+
+        }
+
+
+        .gallery-next {
+
+            right: -80px;
+
+        }
+
+
+        /* CONTADOR */
+
+        .gallery-counter {
+
+            color: white;
+
+            font-size: 14px;
+
+            margin-top: 15px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* MINIATURAS */
+
+        .gallery-thumbnails {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 18px;
+
+            max-width: 100%;
+
+            overflow-x: auto;
+
+            padding: 5px;
+
+        }
+
+
+        .gallery-thumbnail {
+
+            width: 85px;
+
+            height: 60px;
+
+            object-fit: cover;
+
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            opacity: 0.55;
+
+            border: 2px solid transparent;
+
+            transition: 0.3s;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .gallery-thumbnail:hover {
+
+            opacity: 0.85;
+
+        }
+
+
+        .gallery-thumbnail.active {
+
+            opacity: 1;
+
+            border-color: white;
 
         }
 
@@ -1475,6 +1751,76 @@
 
             }
 
+
+            /* GALERÍA EN CELULAR */
+
+            .gallery-modal {
+
+                padding: 20px;
+
+            }
+
+
+            .gallery-content {
+
+                width: 100%;
+
+            }
+
+
+            .gallery-image {
+
+                max-width: 100%;
+
+                max-height: 65vh;
+
+            }
+
+
+            .gallery-arrow {
+
+                width: 42px;
+
+                height: 55px;
+
+                font-size: 28px;
+
+                background: rgba(0,0,0,0.40);
+
+            }
+
+
+            .gallery-prev {
+
+                left: 5px;
+
+            }
+
+
+            .gallery-next {
+
+                right: 5px;
+
+            }
+
+
+            .gallery-close {
+
+                top: -45px;
+
+                right: 0;
+
+            }
+
+
+            .gallery-thumbnail {
+
+                width: 70px;
+
+                height: 50px;
+
+            }
+
         }
 
     </style>
@@ -2068,10 +2414,6 @@
      CAPACITACIONES
 ====================================================== -->
 
-<!-- =====================================================
-     CAPACITACIONES
-====================================================== -->
-
 <section class="section" id="capacitaciones">
 
     <div class="container">
@@ -2121,7 +2463,14 @@
 
             <!-- 02 TRABAJOS EN ALTURA -->
 
-            <div class="training-card">
+            <div
+                class="training-card gallery-trigger"
+                onclick="openGallery('altura')"
+                role="button"
+                tabindex="0"
+                aria-label="Abrir galería de Trabajos en Altura"
+                onkeydown="if(event.key === 'Enter' || event.key === ' ') { openGallery('altura'); }"
+            >
 
                 <div class="training-image">
 
@@ -2238,6 +2587,7 @@
     </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2944,7 +3294,505 @@
 </a>
 
 
+
+<!-- =====================================================
+     MODAL GALERÍA
+====================================================== -->
+
+<div
+    class="gallery-modal"
+    id="galleryModal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Galería de Trabajos en Altura"
+>
+
+    <div class="gallery-content">
+
+
+        <!-- CERRAR -->
+
+        <button
+            class="gallery-close"
+            onclick="closeGallery()"
+            aria-label="Cerrar galería"
+            type="button"
+        >
+
+            ✕
+
+        </button>
+
+
+        <!-- FLECHA ANTERIOR -->
+
+        <button
+            class="gallery-arrow gallery-prev"
+            onclick="previousImage(event)"
+            aria-label="Fotografía anterior"
+            type="button"
+        >
+
+            &#10094;
+
+        </button>
+
+
+        <!-- IMAGEN PRINCIPAL -->
+
+        <img
+            id="galleryImage"
+            class="gallery-image"
+            src=""
+            alt="Trabajos en Altura"
+        >
+
+
+        <!-- FLECHA SIGUIENTE -->
+
+        <button
+            class="gallery-arrow gallery-next"
+            onclick="nextImage(event)"
+            aria-label="Fotografía siguiente"
+            type="button"
+        >
+
+            &#10095;
+
+        </button>
+
+
+        <!-- CONTADOR -->
+
+        <div
+            class="gallery-counter"
+            id="galleryCounter"
+        >
+
+            1 / 3
+
+        </div>
+
+
+        <!-- MINIATURAS -->
+
+        <div
+            class="gallery-thumbnails"
+            id="galleryThumbnails"
+        >
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT GALERÍA
+====================================================== -->
+
+<script>
+
+
+    /* =====================================================
+       FOTOGRAFÍAS DE TRABAJOS EN ALTURA
+    ====================================================== */
+
+    const galleries = {
+
+        altura: [
+
+            "TRABAJOS EN ALTURA.jpg",
+
+            "TRABAJOS EN ALTURA 2.jpg",
+
+            "TRABAJOS EN ALTURA 3.jpg"
+
+        ]
+
+    };
+
+
+    /* =====================================================
+       VARIABLES
+    ====================================================== */
+
+    let currentGallery = [];
+
+    let currentImage = 0;
+
+
+    /* =====================================================
+       ABRIR GALERÍA
+    ====================================================== */
+
+    function openGallery(galleryName) {
+
+        currentGallery =
+            galleries[galleryName];
+
+        if (
+            !currentGallery ||
+            currentGallery.length === 0
+        ) {
+
+            return;
+
+        }
+
+
+        currentImage = 0;
+
+
+        const modal =
+            document.getElementById(
+                "galleryModal"
+            );
+
+
+        modal.classList.add(
+            "active"
+        );
+
+
+        document.body.style.overflow =
+            "hidden";
+
+
+        createThumbnails();
+
+        showImage();
+
+    }
+
+
+    /* =====================================================
+       MOSTRAR IMAGEN
+    ====================================================== */
+
+    function showImage() {
+
+        const image =
+            document.getElementById(
+                "galleryImage"
+            );
+
+
+        const counter =
+            document.getElementById(
+                "galleryCounter"
+            );
+
+
+        image.src =
+            currentGallery[currentImage];
+
+
+        image.alt =
+            "Trabajos en Altura - Fotografía " +
+            (currentImage + 1);
+
+
+        counter.textContent =
+            (currentImage + 1) +
+            " / " +
+            currentGallery.length;
+
+
+        updateThumbnails();
+
+    }
+
+
+    /* =====================================================
+       SIGUIENTE IMAGEN
+    ====================================================== */
+
+    function nextImage(event) {
+
+        if (event) {
+
+            event.stopPropagation();
+
+        }
+
+
+        currentImage++;
+
+
+        if (
+            currentImage >=
+            currentGallery.length
+        ) {
+
+            currentImage = 0;
+
+        }
+
+
+        showImage();
+
+    }
+
+
+    /* =====================================================
+       IMAGEN ANTERIOR
+    ====================================================== */
+
+    function previousImage(event) {
+
+        if (event) {
+
+            event.stopPropagation();
+
+        }
+
+
+        currentImage--;
+
+
+        if (currentImage < 0) {
+
+            currentImage =
+                currentGallery.length - 1;
+
+        }
+
+
+        showImage();
+
+    }
+
+
+    /* =====================================================
+       CREAR MINIATURAS
+    ====================================================== */
+
+    function createThumbnails() {
+
+        const container =
+            document.getElementById(
+                "galleryThumbnails"
+            );
+
+
+        container.innerHTML = "";
+
+
+        currentGallery.forEach(
+            function(photo, index) {
+
+
+                const thumbnail =
+                    document.createElement(
+                        "img"
+                    );
+
+
+                thumbnail.src =
+                    photo;
+
+
+                thumbnail.className =
+                    "gallery-thumbnail";
+
+
+                thumbnail.alt =
+                    "Trabajos en Altura - Foto " +
+                    (index + 1);
+
+
+                thumbnail.onclick =
+                    function(event) {
+
+                        event.stopPropagation();
+
+
+                        currentImage =
+                            index;
+
+
+                        showImage();
+
+                    };
+
+
+                container.appendChild(
+                    thumbnail
+                );
+
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ACTUALIZAR MINIATURAS
+    ====================================================== */
+
+    function updateThumbnails() {
+
+        const thumbnails =
+            document.querySelectorAll(
+                ".gallery-thumbnail"
+            );
+
+
+        thumbnails.forEach(
+            function(
+                thumbnail,
+                index
+            ) {
+
+
+                if (
+                    index ===
+                    currentImage
+                ) {
+
+                    thumbnail.classList.add(
+                        "active"
+                    );
+
+                } else {
+
+                    thumbnail.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CERRAR GALERÍA
+    ====================================================== */
+
+    function closeGallery() {
+
+        const modal =
+            document.getElementById(
+                "galleryModal"
+            );
+
+
+        modal.classList.remove(
+            "active"
+        );
+
+
+        document.body.style.overflow =
+            "";
+
+
+        document.getElementById(
+            "galleryImage"
+        ).src = "";
+
+    }
+
+
+    /* =====================================================
+       CERRAR AL HACER CLIC FUERA
+    ====================================================== */
+
+    document
+        .getElementById(
+            "galleryModal"
+        )
+        .addEventListener(
+            "click",
+            function(event) {
+
+
+                if (
+                    event.target === this
+                ) {
+
+                    closeGallery();
+
+                }
+
+            }
+        );
+
+
+    /* =====================================================
+       TECLADO
+    ====================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+
+            const modal =
+                document.getElementById(
+                    "galleryModal"
+                );
+
+
+            if (
+                !modal.classList.contains(
+                    "active"
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            /* ESC */
+
+            if (
+                event.key ===
+                "Escape"
+            ) {
+
+                closeGallery();
+
+            }
+
+
+            /* FLECHA DERECHA */
+
+            if (
+                event.key ===
+                "ArrowRight"
+            ) {
+
+                nextImage();
+
+            }
+
+
+            /* FLECHA IZQUIERDA */
+
+            if (
+                event.key ===
+                "ArrowLeft"
+            ) {
+
+                previousImage();
+
+            }
+
+        }
+    );
+
+
+</script>
+
+
 </body>
 
 </html>
-```
