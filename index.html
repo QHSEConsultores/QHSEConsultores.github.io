@@ -693,6 +693,27 @@
 
             padding: 28px;
 
+            transition: 0.3s;
+
+        }
+
+
+        /* TARJETAS CON GALERÍA */
+
+        .gallery-trigger {
+
+            cursor: pointer;
+
+        }
+
+
+        .gallery-trigger:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px rgba(13,43,54,0.18);
+
         }
 
 
@@ -716,6 +737,15 @@
             object-fit: cover;
 
             object-position: center 35%;
+
+            transition: transform 0.5s ease;
+
+        }
+
+
+        .gallery-trigger:hover .training-image img {
+
+            transform: scale(1.04);
 
         }
 
@@ -756,25 +786,8 @@
 
 
         /* =====================================================
-           GALERÍA - TRABAJOS EN ALTURA
+           MODAL DE GALERÍA
         ====================================================== */
-
-        .gallery-trigger {
-
-            cursor: pointer;
-
-        }
-
-
-        .gallery-trigger:hover {
-
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 12px 30px rgba(13,43,54,0.18);
-
-        }
-
 
         .gallery-modal {
 
@@ -786,7 +799,8 @@
 
             z-index: 5000;
 
-            background: rgba(0,0,0,0.94);
+            background:
+                rgba(0,0,0,0.92);
 
             align-items: center;
 
@@ -812,35 +826,37 @@
 
             max-width: 1100px;
 
+            text-align: center;
+
             display: flex;
 
             flex-direction: column;
 
             align-items: center;
 
-            justify-content: center;
-
         }
 
+
+        /* IMAGEN GRANDE */
 
         .gallery-image {
 
             display: block;
 
-            width: auto;
-
             max-width: 100%;
-
-            height: auto;
 
             max-height: 72vh;
 
+            width: auto;
+
+            height: auto;
+
             object-fit: contain;
 
-            border-radius: 5px;
+            border-radius: 6px;
 
             box-shadow:
-                0 15px 50px rgba(0,0,0,0.5);
+                0 10px 40px rgba(0,0,0,0.45);
 
         }
 
@@ -851,9 +867,17 @@
 
             position: absolute;
 
-            top: -50px;
+            top: -48px;
 
             right: 0;
+
+            color: white;
+
+            font-size: 32px;
+
+            font-weight: bold;
+
+            cursor: pointer;
 
             width: 42px;
 
@@ -865,14 +889,6 @@
 
             justify-content: center;
 
-            color: white;
-
-            font-size: 30px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
             transition: 0.3s;
 
         }
@@ -881,8 +897,6 @@
         .gallery-close:hover {
 
             transform: scale(1.15);
-
-            color: #66bb6a;
 
         }
 
@@ -895,7 +909,8 @@
 
             top: 50%;
 
-            transform: translateY(-50%);
+            transform:
+                translateY(-50%);
 
             width: 55px;
 
@@ -905,7 +920,8 @@
 
             border-radius: 5px;
 
-            background: rgba(255,255,255,0.15);
+            background:
+                rgba(255,255,255,0.15);
 
             color: white;
 
@@ -921,14 +937,15 @@
 
             transition: 0.3s;
 
-            z-index: 10;
+            z-index: 2;
 
         }
 
 
         .gallery-arrow:hover {
 
-            background: rgba(255,255,255,0.30);
+            background:
+                rgba(255,255,255,0.32);
 
             transform:
                 translateY(-50%)
@@ -973,8 +990,6 @@
             display: flex;
 
             justify-content: center;
-
-            align-items: center;
 
             gap: 10px;
 
@@ -1646,6 +1661,21 @@
 
             }
 
+
+            /* FLECHAS EN TABLET */
+
+            .gallery-prev {
+
+                left: 5px;
+
+            }
+
+            .gallery-next {
+
+                right: 5px;
+
+            }
+
         }
 
 
@@ -1785,7 +1815,8 @@
 
                 font-size: 28px;
 
-                background: rgba(0,0,0,0.40);
+                background:
+                    rgba(0,0,0,0.40);
 
             }
 
@@ -1864,7 +1895,6 @@
 
     <div class="container header-content">
 
-
         <a href="#inicio" class="logo">
 
             <div class="logo-symbol">
@@ -1917,7 +1947,6 @@
             </a>
 
         </nav>
-
 
     </div>
 
@@ -1999,7 +2028,6 @@
 
     <div class="container">
 
-
         <div class="section-header">
 
             <div class="small-title">
@@ -2024,19 +2052,10 @@
         <div class="services-grid">
 
 
-            <!-- CALIDAD -->
-
             <article class="service-card">
 
                 <div class="service-image">
-
-                    <!-- Reemplazar posteriormente por:
-                    <img src="images/calidad.jpg"
-                         alt="Gestión de Calidad">
-                    -->
-
                     ✓
-
                 </div>
 
                 <div class="service-content">
@@ -2063,14 +2082,10 @@
 
 
 
-            <!-- SEGURIDAD -->
-
             <article class="service-card">
 
                 <div class="service-image">
-
                     🦺
-
                 </div>
 
                 <div class="service-content">
@@ -2097,14 +2112,10 @@
 
 
 
-            <!-- SALUD -->
-
             <article class="service-card">
 
                 <div class="service-image">
-
                     ⚕️
-
                 </div>
 
                 <div class="service-content">
@@ -2131,14 +2142,10 @@
 
 
 
-            <!-- AMBIENTE -->
-
             <article class="service-card">
 
                 <div class="service-image">
-
                     🌱
-
                 </div>
 
                 <div class="service-content">
@@ -2179,7 +2186,6 @@
 
     <div class="container">
 
-
         <div class="section-header">
 
             <div class="small-title">
@@ -2212,25 +2218,15 @@
 
                 <ul>
 
-                    <li>
-                        Identificación de peligros
-                    </li>
+                    <li>Identificación de peligros</li>
 
-                    <li>
-                        Evaluación de riesgos
-                    </li>
+                    <li>Evaluación de riesgos</li>
 
-                    <li>
-                        Inspecciones de seguridad
-                    </li>
+                    <li>Inspecciones de seguridad</li>
 
-                    <li>
-                        Investigación de accidentes
-                    </li>
+                    <li>Investigación de accidentes</li>
 
-                    <li>
-                        Planes de emergencia
-                    </li>
+                    <li>Planes de emergencia</li>
 
                 </ul>
 
@@ -2245,25 +2241,15 @@
 
                 <ul>
 
-                    <li>
-                        Evaluación de riesgos
-                    </li>
+                    <li>Evaluación de riesgos</li>
 
-                    <li>
-                        Ergonomía
-                    </li>
+                    <li>Ergonomía</li>
 
-                    <li>
-                        Riesgos psicosociales
-                    </li>
+                    <li>Riesgos psicosociales</li>
 
-                    <li>
-                        Vigilancia de la salud
-                    </li>
+                    <li>Vigilancia de la salud</li>
 
-                    <li>
-                        Programas preventivos
-                    </li>
+                    <li>Programas preventivos</li>
 
                 </ul>
 
@@ -2278,25 +2264,15 @@
 
                 <ul>
 
-                    <li>
-                        Aspectos e impactos ambientales
-                    </li>
+                    <li>Aspectos e impactos ambientales</li>
 
-                    <li>
-                        Gestión de residuos
-                    </li>
+                    <li>Gestión de residuos</li>
 
-                    <li>
-                        Programas ambientales
-                    </li>
+                    <li>Programas ambientales</li>
 
-                    <li>
-                        Inspecciones ambientales
-                    </li>
+                    <li>Inspecciones ambientales</li>
 
-                    <li>
-                        Cumplimiento ambiental
-                    </li>
+                    <li>Cumplimiento ambiental</li>
 
                 </ul>
 
@@ -2311,25 +2287,15 @@
 
                 <ul>
 
-                    <li>
-                        Gestión por procesos
-                    </li>
+                    <li>Gestión por procesos</li>
 
-                    <li>
-                        Sistemas de gestión
-                    </li>
+                    <li>Sistemas de gestión</li>
 
-                    <li>
-                        Indicadores
-                    </li>
+                    <li>Indicadores</li>
 
-                    <li>
-                        Auditorías
-                    </li>
+                    <li>Auditorías</li>
 
-                    <li>
-                        Mejora continua
-                    </li>
+                    <li>Mejora continua</li>
 
                 </ul>
 
@@ -2344,25 +2310,15 @@
 
                 <ul>
 
-                    <li>
-                        Sistemas QHSE
-                    </li>
+                    <li>Sistemas QHSE</li>
 
-                    <li>
-                        Integración de procesos
-                    </li>
+                    <li>Integración de procesos</li>
 
-                    <li>
-                        Documentación
-                    </li>
+                    <li>Documentación</li>
 
-                    <li>
-                        Indicadores de gestión
-                    </li>
+                    <li>Indicadores de gestión</li>
 
-                    <li>
-                        Auditorías internas
-                    </li>
+                    <li>Auditorías internas</li>
 
                 </ul>
 
@@ -2377,25 +2333,15 @@
 
                 <ul>
 
-                    <li>
-                        Auditorías internas
-                    </li>
+                    <li>Auditorías internas</li>
 
-                    <li>
-                        Inspecciones técnicas
-                    </li>
+                    <li>Inspecciones técnicas</li>
 
-                    <li>
-                        Diagnósticos
-                    </li>
+                    <li>Diagnósticos</li>
 
-                    <li>
-                        Planes de acción
-                    </li>
+                    <li>Planes de acción</li>
 
-                    <li>
-                        Seguimiento
-                    </li>
+                    <li>Seguimiento</li>
 
                 </ul>
 
@@ -2429,9 +2375,11 @@
             </h2>
 
             <p>
+
                 Programas de capacitación orientados a
                 fortalecer las competencias de los equipos
                 de trabajo.
+
             </p>
 
         </div>
@@ -2440,18 +2388,33 @@
         <div class="training-grid">
 
 
-            <!-- 01 SEGURIDAD INDUSTRIAL -->
+            <!-- =================================================
+                 01 SEGURIDAD INDUSTRIAL
+            ================================================== -->
 
-            <div class="training-card">
+            <div
+                class="training-card gallery-trigger"
+                onclick="openGallery('seguridad')">
+
+                <div class="training-image">
+
+                    <img
+                        src="Cap_SI 1.jpg"
+                        alt="Capacitación en Seguridad Industrial"
+                    >
+
+                </div>
 
                 <h3>
                     Seguridad Industrial
                 </h3>
 
                 <p>
+
                     Prevención de riesgos laborales,
                     actos y condiciones inseguras,
                     inspecciones y cultura preventiva.
+
                 </p>
 
                 <div class="training-number">
@@ -2461,22 +2424,20 @@
             </div>
 
 
-            <!-- 02 TRABAJOS EN ALTURA -->
+
+            <!-- =================================================
+                 02 TRABAJOS EN ALTURA
+            ================================================== -->
 
             <div
                 class="training-card gallery-trigger"
-                onclick="openGallery('altura')"
-                role="button"
-                tabindex="0"
-                aria-label="Abrir galería de Trabajos en Altura"
-                onkeydown="if(event.key === 'Enter' || event.key === ' ') { openGallery('altura'); }"
-            >
+                onclick="openGallery('altura')">
 
                 <div class="training-image">
 
                     <img
-                        src="TRABAJOS EN ALTURA.jpg"
-                        alt="Capacitación en trabajos en altura"
+                        src="Cap_TA 1.jpg"
+                        alt="Capacitación en Trabajos en Altura"
                     >
 
                 </div>
@@ -2486,9 +2447,11 @@
                 </h3>
 
                 <p>
+
                     Prevención de riesgos asociados
                     a trabajos en altura y uso adecuado
                     de sistemas de protección.
+
                 </p>
 
                 <div class="training-number">
@@ -2498,18 +2461,34 @@
             </div>
 
 
-            <!-- 03 RIESGO ELÉCTRICO -->
 
-            <div class="training-card">
+            <!-- =================================================
+                 03 RIESGO ELÉCTRICO
+            ================================================== -->
+
+            <div
+                class="training-card gallery-trigger"
+                onclick="openGallery('electrico')">
+
+                <div class="training-image">
+
+                    <img
+                        src="Cap_RE 1.jpg"
+                        alt="Capacitación en Riesgo Eléctrico"
+                    >
+
+                </div>
 
                 <h3>
                     Riesgo Eléctrico
                 </h3>
 
                 <p>
+
                     Principios de seguridad para trabajos
                     relacionados con instalaciones y
                     equipos eléctricos.
+
                 </p>
 
                 <div class="training-number">
@@ -2519,18 +2498,34 @@
             </div>
 
 
-            <!-- 04 ESPACIOS CONFINADOS -->
 
-            <div class="training-card">
+            <!-- =================================================
+                 04 ESPACIOS CONFINADOS
+            ================================================== -->
+
+            <div
+                class="training-card gallery-trigger"
+                onclick="openGallery('confinados')">
+
+                <div class="training-image">
+
+                    <img
+                        src="Cap_EC 1.jpg"
+                        alt="Capacitación en Espacios Confinados"
+                    >
+
+                </div>
 
                 <h3>
                     Espacios Confinados
                 </h3>
 
                 <p>
+
                     Identificación de peligros, controles,
                     permisos y preparación para trabajos
                     en espacios confinados.
+
                 </p>
 
                 <div class="training-number">
@@ -2540,18 +2535,34 @@
             </div>
 
 
-            <!-- 05 EMERGENCIAS Y EVACUACIÓN -->
 
-            <div class="training-card">
+            <!-- =================================================
+                 05 EMERGENCIAS Y EVACUACIÓN
+            ================================================== -->
+
+            <div
+                class="training-card gallery-trigger"
+                onclick="openGallery('emergencias')">
+
+                <div class="training-image">
+
+                    <img
+                        src="Cap_EE 1.jpg"
+                        alt="Capacitación en Emergencias y Evacuación"
+                    >
+
+                </div>
 
                 <h3>
                     Emergencias y Evacuación
                 </h3>
 
                 <p>
+
                     Organización de brigadas,
                     respuesta ante emergencias,
                     evacuación y prevención.
+
                 </p>
 
                 <div class="training-number">
@@ -2561,7 +2572,10 @@
             </div>
 
 
-            <!-- 06 GESTIÓN QHSE -->
+
+            <!-- =================================================
+                 06 GESTIÓN QHSE
+            ================================================== -->
 
             <div class="training-card">
 
@@ -2570,9 +2584,11 @@
                 </h3>
 
                 <p>
+
                     Principios de Calidad, Seguridad,
                     Salud Ocupacional y Ambiente
                     aplicados a la organización.
+
                 </p>
 
                 <div class="training-number">
@@ -2597,7 +2613,6 @@
 <section class="section section-light" id="mediciones">
 
     <div class="container">
-
 
         <div class="section-header">
 
@@ -2746,19 +2761,9 @@
 
     <div class="container">
 
-
         <div class="about-grid">
 
-
             <div class="about-image">
-
-                <!--
-                PARA COLOCAR UNA FOTO:
-
-                <img src="images/nosotros.jpg"
-                     alt="QHSE Consultores">
-                -->
-
             </div>
 
 
@@ -2813,9 +2818,7 @@
 
                 </div>
 
-
             </div>
-
 
         </div>
 
@@ -2832,7 +2835,6 @@
 <section class="section section-light">
 
     <div class="container">
-
 
         <div class="section-header">
 
@@ -2903,7 +2905,6 @@
 <section class="section" id="blog">
 
     <div class="container">
-
 
         <div class="section-header">
 
@@ -3065,7 +3066,6 @@
 
     <div class="container">
 
-
         <div class="contact-grid">
 
 
@@ -3177,7 +3177,6 @@
 
     <div class="container">
 
-
         <div class="footer-grid">
 
 
@@ -3272,7 +3271,6 @@
 
         </div>
 
-
     </div>
 
 </footer>
@@ -3296,15 +3294,13 @@
 
 
 <!-- =====================================================
-     MODAL GALERÍA
+     MODAL DE GALERÍAS
 ====================================================== -->
 
 <div
     class="gallery-modal"
     id="galleryModal"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Galería de Trabajos en Altura"
+    aria-hidden="true"
 >
 
     <div class="gallery-content">
@@ -3316,12 +3312,12 @@
             class="gallery-close"
             onclick="closeGallery()"
             aria-label="Cerrar galería"
-            type="button"
         >
 
             ✕
 
         </button>
+
 
 
         <!-- FLECHA ANTERIOR -->
@@ -3330,12 +3326,12 @@
             class="gallery-arrow gallery-prev"
             onclick="previousImage(event)"
             aria-label="Fotografía anterior"
-            type="button"
         >
 
             &#10094;
 
         </button>
+
 
 
         <!-- IMAGEN PRINCIPAL -->
@@ -3344,8 +3340,9 @@
             id="galleryImage"
             class="gallery-image"
             src=""
-            alt="Trabajos en Altura"
+            alt=""
         >
+
 
 
         <!-- FLECHA SIGUIENTE -->
@@ -3354,12 +3351,12 @@
             class="gallery-arrow gallery-next"
             onclick="nextImage(event)"
             aria-label="Fotografía siguiente"
-            type="button"
         >
 
             &#10095;
 
         </button>
+
 
 
         <!-- CONTADOR -->
@@ -3374,12 +3371,14 @@
         </div>
 
 
+
         <!-- MINIATURAS -->
 
         <div
             class="gallery-thumbnails"
             id="galleryThumbnails"
         >
+
         </div>
 
 
@@ -3390,52 +3389,477 @@
 
 
 <!-- =====================================================
-     JAVASCRIPT GALERÍA
+     JAVASCRIPT - GALERÍAS
 ====================================================== -->
 
 <script>
 
 
-    /* =====================================================
-       FOTOGRAFÍAS DE TRABAJOS EN ALTURA
-    ====================================================== */
+/* =====================================================
+   GALERÍAS DE CAPACITACIONES
+====================================================== */
 
-    const galleries = {
-
-        altura: [
-
-            "TRABAJOS EN ALTURA.jpg",
-
-            "TRABAJOS EN ALTURA 2.jpg",
-
-            "TRABAJOS EN ALTURA 3.jpg"
-
-        ]
-
-    };
+const galleries = {
 
 
-    /* =====================================================
-       VARIABLES
-    ====================================================== */
+    /* SEGURIDAD INDUSTRIAL */
 
-    let currentGallery = [];
+    seguridad: [
 
-    let currentImage = 0;
+        "Cap_SI 1.jpg",
+
+        "Cap_SI 2.jpg",
+
+        "Cap_SI 3.jpg"
+
+    ],
 
 
-    /* =====================================================
-       ABRIR GALERÍA
-    ====================================================== */
+    /* TRABAJOS EN ALTURA */
 
-    function openGallery(galleryName) {
+    altura: [
 
-        currentGallery =
-            galleries[galleryName];
+        "Cap_TA 1.jpg",
+
+        "Cap_TA 2.jpg",
+
+        "Cap_TA 3.jpg"
+
+    ],
+
+
+    /* RIESGO ELÉCTRICO */
+
+    electrico: [
+
+        "Cap_RE 1.jpg",
+
+        "Cap_RE 2.jpg",
+
+        "Cap_RE 3.jpg"
+
+    ],
+
+
+    /* ESPACIOS CONFINADOS */
+
+    confinados: [
+
+        "Cap_EC 1.jpg",
+
+        "Cap_EC 2.jpg",
+
+        "Cap_EC 3.jpg"
+
+    ],
+
+
+    /* EMERGENCIAS Y EVACUACIÓN */
+
+    emergencias: [
+
+        "Cap_EE 1.jpg",
+
+        "Cap_EE 2.jpg",
+
+        "Cap_EE 3.jpg"
+
+    ]
+
+};
+
+
+
+/* =====================================================
+   VARIABLES
+====================================================== */
+
+let currentGallery = [];
+
+let currentImage = 0;
+
+
+
+/* =====================================================
+   NOMBRE DE LAS CAPACITACIONES
+====================================================== */
+
+const galleryTitles = {
+
+    seguridad:
+        "Seguridad Industrial",
+
+    altura:
+        "Trabajos en Altura",
+
+    electrico:
+        "Riesgo Eléctrico",
+
+    confinados:
+        "Espacios Confinados",
+
+    emergencias:
+        "Emergencias y Evacuación"
+
+};
+
+
+
+/* =====================================================
+   ABRIR GALERÍA
+====================================================== */
+
+function openGallery(galleryName) {
+
+
+    currentGallery =
+        galleries[galleryName];
+
+
+    currentImage = 0;
+
+
+    const modal =
+        document.getElementById(
+            "galleryModal"
+        );
+
+
+    modal.classList.add(
+        "active"
+    );
+
+
+    modal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    createThumbnails();
+
+
+    showImage();
+
+
+}
+
+
+
+/* =====================================================
+   MOSTRAR IMAGEN
+====================================================== */
+
+function showImage() {
+
+
+    const image =
+        document.getElementById(
+            "galleryImage"
+        );
+
+
+    const counter =
+        document.getElementById(
+            "galleryCounter"
+        );
+
+
+    image.src =
+        currentGallery[
+            currentImage
+        ];
+
+
+    image.alt =
+        "Fotografía " +
+        (currentImage + 1) +
+        " de capacitación";
+
+
+    counter.textContent =
+
+        (currentImage + 1)
+        +
+        " / "
+        +
+        currentGallery.length;
+
+
+    updateThumbnails();
+
+}
+
+
+
+/* =====================================================
+   SIGUIENTE IMAGEN
+====================================================== */
+
+function nextImage(event) {
+
+
+    if (event) {
+
+        event.stopPropagation();
+
+    }
+
+
+    currentImage++;
+
+
+    if (
+        currentImage >=
+        currentGallery.length
+    ) {
+
+        currentImage = 0;
+
+    }
+
+
+    showImage();
+
+}
+
+
+
+/* =====================================================
+   IMAGEN ANTERIOR
+====================================================== */
+
+function previousImage(event) {
+
+
+    if (event) {
+
+        event.stopPropagation();
+
+    }
+
+
+    currentImage--;
+
+
+    if (currentImage < 0) {
+
+        currentImage =
+            currentGallery.length - 1;
+
+    }
+
+
+    showImage();
+
+}
+
+
+
+/* =====================================================
+   CREAR MINIATURAS
+====================================================== */
+
+function createThumbnails() {
+
+
+    const container =
+        document.getElementById(
+            "galleryThumbnails"
+        );
+
+
+    container.innerHTML = "";
+
+
+    currentGallery.forEach(
+
+        function(photo, index) {
+
+
+            const thumbnail =
+                document.createElement(
+                    "img"
+                );
+
+
+            thumbnail.src =
+                photo;
+
+
+            thumbnail.className =
+                "gallery-thumbnail";
+
+
+            thumbnail.alt =
+                "Miniatura " +
+                (index + 1);
+
+
+            thumbnail.onclick =
+
+                function(event) {
+
+
+                    event.stopPropagation();
+
+
+                    currentImage =
+                        index;
+
+
+                    showImage();
+
+                };
+
+
+            container.appendChild(
+                thumbnail
+            );
+
+
+        }
+
+    );
+
+}
+
+
+
+/* =====================================================
+   ACTUALIZAR MINIATURAS
+====================================================== */
+
+function updateThumbnails() {
+
+
+    const thumbnails =
+        document.querySelectorAll(
+            ".gallery-thumbnail"
+        );
+
+
+    thumbnails.forEach(
+
+        function(thumbnail, index) {
+
+
+            if (
+                index === currentImage
+            ) {
+
+                thumbnail.classList.add(
+                    "active"
+                );
+
+            }
+
+            else {
+
+                thumbnail.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+
+    );
+
+}
+
+
+
+/* =====================================================
+   CERRAR GALERÍA
+====================================================== */
+
+function closeGallery() {
+
+
+    const modal =
+        document.getElementById(
+            "galleryModal"
+        );
+
+
+    modal.classList.remove(
+        "active"
+    );
+
+
+    modal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.style.overflow =
+        "";
+
+
+    document.getElementById(
+        "galleryImage"
+    ).src = "";
+
+}
+
+
+
+/* =====================================================
+   CERRAR AL HACER CLIC FUERA
+====================================================== */
+
+document
+    .getElementById(
+        "galleryModal"
+    )
+    .addEventListener(
+
+        "click",
+
+        function(event) {
+
+
+            if (
+                event.target === this
+            ) {
+
+                closeGallery();
+
+            }
+
+        }
+
+    );
+
+
+
+/* =====================================================
+   TECLADO
+====================================================== */
+
+document.addEventListener(
+
+    "keydown",
+
+    function(event) {
+
+
+        const modal =
+            document.getElementById(
+                "galleryModal"
+            );
+
 
         if (
-            !currentGallery ||
-            currentGallery.length === 0
+            !modal.classList.contains(
+                "active"
+            )
         ) {
 
             return;
@@ -3443,351 +3867,41 @@
         }
 
 
-        currentImage = 0;
-
-
-        const modal =
-            document.getElementById(
-                "galleryModal"
-            );
-
-
-        modal.classList.add(
-            "active"
-        );
-
-
-        document.body.style.overflow =
-            "hidden";
-
-
-        createThumbnails();
-
-        showImage();
-
-    }
-
-
-    /* =====================================================
-       MOSTRAR IMAGEN
-    ====================================================== */
-
-    function showImage() {
-
-        const image =
-            document.getElementById(
-                "galleryImage"
-            );
-
-
-        const counter =
-            document.getElementById(
-                "galleryCounter"
-            );
-
-
-        image.src =
-            currentGallery[currentImage];
-
-
-        image.alt =
-            "Trabajos en Altura - Fotografía " +
-            (currentImage + 1);
-
-
-        counter.textContent =
-            (currentImage + 1) +
-            " / " +
-            currentGallery.length;
-
-
-        updateThumbnails();
-
-    }
-
-
-    /* =====================================================
-       SIGUIENTE IMAGEN
-    ====================================================== */
-
-    function nextImage(event) {
-
-        if (event) {
-
-            event.stopPropagation();
-
-        }
-
-
-        currentImage++;
-
+        /* ESC */
 
         if (
-            currentImage >=
-            currentGallery.length
+            event.key === "Escape"
         ) {
 
-            currentImage = 0;
+            closeGallery();
 
         }
 
 
-        showImage();
+        /* DERECHA */
 
-    }
+        if (
+            event.key === "ArrowRight"
+        ) {
 
-
-    /* =====================================================
-       IMAGEN ANTERIOR
-    ====================================================== */
-
-    function previousImage(event) {
-
-        if (event) {
-
-            event.stopPropagation();
+            nextImage();
 
         }
 
 
-        currentImage--;
+        /* IZQUIERDA */
 
+        if (
+            event.key === "ArrowLeft"
+        ) {
 
-        if (currentImage < 0) {
-
-            currentImage =
-                currentGallery.length - 1;
+            previousImage();
 
         }
 
-
-        showImage();
-
     }
 
-
-    /* =====================================================
-       CREAR MINIATURAS
-    ====================================================== */
-
-    function createThumbnails() {
-
-        const container =
-            document.getElementById(
-                "galleryThumbnails"
-            );
-
-
-        container.innerHTML = "";
-
-
-        currentGallery.forEach(
-            function(photo, index) {
-
-
-                const thumbnail =
-                    document.createElement(
-                        "img"
-                    );
-
-
-                thumbnail.src =
-                    photo;
-
-
-                thumbnail.className =
-                    "gallery-thumbnail";
-
-
-                thumbnail.alt =
-                    "Trabajos en Altura - Foto " +
-                    (index + 1);
-
-
-                thumbnail.onclick =
-                    function(event) {
-
-                        event.stopPropagation();
-
-
-                        currentImage =
-                            index;
-
-
-                        showImage();
-
-                    };
-
-
-                container.appendChild(
-                    thumbnail
-                );
-
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       ACTUALIZAR MINIATURAS
-    ====================================================== */
-
-    function updateThumbnails() {
-
-        const thumbnails =
-            document.querySelectorAll(
-                ".gallery-thumbnail"
-            );
-
-
-        thumbnails.forEach(
-            function(
-                thumbnail,
-                index
-            ) {
-
-
-                if (
-                    index ===
-                    currentImage
-                ) {
-
-                    thumbnail.classList.add(
-                        "active"
-                    );
-
-                } else {
-
-                    thumbnail.classList.remove(
-                        "active"
-                    );
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       CERRAR GALERÍA
-    ====================================================== */
-
-    function closeGallery() {
-
-        const modal =
-            document.getElementById(
-                "galleryModal"
-            );
-
-
-        modal.classList.remove(
-            "active"
-        );
-
-
-        document.body.style.overflow =
-            "";
-
-
-        document.getElementById(
-            "galleryImage"
-        ).src = "";
-
-    }
-
-
-    /* =====================================================
-       CERRAR AL HACER CLIC FUERA
-    ====================================================== */
-
-    document
-        .getElementById(
-            "galleryModal"
-        )
-        .addEventListener(
-            "click",
-            function(event) {
-
-
-                if (
-                    event.target === this
-                ) {
-
-                    closeGallery();
-
-                }
-
-            }
-        );
-
-
-    /* =====================================================
-       TECLADO
-    ====================================================== */
-
-    document.addEventListener(
-        "keydown",
-        function(event) {
-
-
-            const modal =
-                document.getElementById(
-                    "galleryModal"
-                );
-
-
-            if (
-                !modal.classList.contains(
-                    "active"
-                )
-            ) {
-
-                return;
-
-            }
-
-
-            /* ESC */
-
-            if (
-                event.key ===
-                "Escape"
-            ) {
-
-                closeGallery();
-
-            }
-
-
-            /* FLECHA DERECHA */
-
-            if (
-                event.key ===
-                "ArrowRight"
-            ) {
-
-                nextImage();
-
-            }
-
-
-            /* FLECHA IZQUIERDA */
-
-            if (
-                event.key ===
-                "ArrowLeft"
-            ) {
-
-                previousImage();
-
-            }
-
-        }
-    );
+);
 
 
 </script>
